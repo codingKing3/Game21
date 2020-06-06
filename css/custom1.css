@@ -1,0 +1,30 @@
+/*
+.row{
+    border-color: blue;
+    border-style: solid;
+
+}
+
+.col-4{
+    border-color: blue;
+    border-style: solid;
+    
+}
+.col-6{
+    border-color: blue;
+    border-style: solid;
+
+}
+*/
+.btn{
+    margin-top: 50px;
+}
+.card{
+    font-size: 100px;
+}
+
+#twentyOne{
+   display:none;
+   font-size: 3em;
+}
+
