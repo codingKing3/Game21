@@ -28,4 +28,5 @@ deal.addEventListener("click",function(){
 // will allow player one to freeze accepting cards before busting out over 21
 player1.addEventListener("click",function(){
 
+    
 });
