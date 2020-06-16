@@ -21,10 +21,27 @@
 }
 .card{
     font-size: 100px;
+    font-family: 'Anton', sans-serif;
+}
+#title{
+    font-family: 'Metal Mania', cursive;
 }
 
 #twentyOne{
    display:none;
-   font-size: 3em;
+   font-size: 1.5em;
 }
 
+#draw1{
+    font-size: x-large;
+    font-family: 'Anton', sans-serif;
+}
+.busted{
+    font-family: 'Metal Mania', cursive;
+    font-size: 4em;
+    color: red; 
+}
+
+.stop{
+    opacity: 0%;;
+}

@@ -10,6 +10,8 @@
         <meta name="description" content="BlackJack 21 game">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="css/custom1.css">
     </head>
     <body>
@@ -19,7 +21,7 @@
         <div class="container">
          <div class = "row justify-content-center">
           <div class = "header">
-             <h1 class =" col-12 display-1 align-items-start">BlackJack <span id="twentyOne">21</span> </h1>
+             <h1 class =" col-12 display-1 align-items-start" id="title">BlackJack <span id="twentyOne">21</span> </h1>
             </div> <!--header-->
          
              <!--container inside header-->
@@ -49,13 +51,13 @@
          </div><!-- dealt card display row-->
          <div class = "row justify-content-center">
             <div class = "col-4 text-center">
-                <p>Total Score</p>
+                <p id="draw1">card played:  <span id=cardPlayed1></span></p>
              </div> 
              <div class = "col-4">
                 <p></p>
              </div> 
              <div class = "col-4 text-center">
-                <p>Total Score</p>
+               <p id="draw2">card played:  <span id=cardPlayed2></span></p>
              </div> 
 
          </div><!-- score area row end-->
@@ -80,16 +82,15 @@
 
 
 
-
-
-
-
-
-
-
         
+<<<<<<< HEAD
         <script async src="js/bootstrap.min.js" ></script>
         <script async src="js/jquery-3.4.1.min.js" ></script>
         <script async src="js/app.js" ></script>
+=======
+        <script  src="js/bootstrap.min.js" ></script>
+        <script  src="js/jquery-3.4.1.min.js" ></script>
+        <script  src="js/app.js" ></script>
+>>>>>>> 4b5f3eeb31e324b912dc5c2965f4118d4ec5c4b6
     </body>
 </html>
