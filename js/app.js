@@ -24,7 +24,12 @@ deal.addEventListener("click",function(){
     showMyCard.innerHTML = total1;
      } 
      else if (total1 > 21){
+        let vanish = document.getElementById("draw1");
+         showMyCard.classList.add("busted");         
          showMyCard.innerHTML = "BUSTED";
+         drawPlayer1.classList.add("stop");
+         vanish.classList.add("stop");
+
      }
 
 
@@ -32,5 +37,6 @@ deal.addEventListener("click",function(){
 
 // will allow player one to freeze accepting cards before busting out over 21
 player1.addEventListener("click",function(){
-
+    let vanish = document.getElementById("cardPlayed1");
+   
 });
