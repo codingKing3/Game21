@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>BlackJack 21</title>
+        <meta name="description" content="BlackJack 21 game">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="../css/custom1.css">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+         <div class = "row justify-content-center">
+          <div class = "header">
+             <h1 class =" col-12 display-1 align-items-start" id="title">BlackJack <span id="twentyOne">21</span> </h1>
+            </div> <!--header-->
+         
+             <!--container inside header-->
+                    
+         </div> <!--row end header-->
+               <!-- <div class="playerName">-->
+            <div class="row" >
+             <div class = "col-4">
+               <!-- <p>Player One Picks</p>-->
+             </div> 
+             <div class = "col-4">
+                <p></p>
+             </div> 
+             <div class = "col-4">
+                <!-- <p>Player Two Picks</p>-->
+             </div>  
+               <!--  </div>--> 
+
+         </div>
+          <div class=" row d-flex" id="playsCardArea"> 
+            <div class="col-6 d-flex align-items-start border-0 card " id="card1">
+               0
+            </div> 
+            
+   
+            <div class="col-6 d-flex align-items-end border-0 card ">
+               0
+            </div>
+
+          </div><!-- dealt card display row-->
+         <div class = "row justify-content-center">
+            <div class = "col-4 text-center">
+                <p id="draw1"> <span id="cardPlayed1"></span></p>
+             </div> 
+             <div class = "col-4">
+                <p></p>
+             </div> 
+             <div class = "col-4 text-center">
+               <p id="draw2">House:  <span id="cardPlayed2"></span></p>
+             </div> 
+
+         </div><!-- score area row end-->
+         <div class= "container display-3">
+           <div class = "row d-flex mt-5 ">
+            <div class = "col-4 d-flex align-items-end justify-content-start" id="freeze1">
+                <button  type="button" class ="btn btn-success align-item-left " id="player1"> 
+                   Play One Freeze
+                  </button>
+             </div> 
+             <div class = "col-4" id="deal">
+                <button  type="button" class ="btn btn-lg btn-dark btn-block" id="playBtn">Deal</button>
+             </div> 
+             <div class = "col-4 d-flex align-items-end justify-content-end " id="freeze2">
+                <button  type="button" class ="btn  btn-success ">House Freeze</button>
+             </div> 
+
+           </div>  
+
+         </div>
+
+
+        </div><!--main container-->
+
+
+
+         <script  src="../js/jquery-3.4.1.min.js" ></script>
+        <script  src="../js/bootstrap.min.js" ></script>       
+        <script  src="../js/app.js" ></script>
+        <script src="../js/custom.js"></script>
+    </body>
+</html>

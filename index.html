@@ -2,95 +2,85 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>BlackJack 21</title>
-        <meta name="description" content="BlackJack 21 game">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="css/custom1.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <div class="container">
-         <div class = "row justify-content-center">
-          <div class = "header">
-             <h1 class =" col-12 display-1 align-items-start" id="title">BlackJack <span id="twentyOne">21</span> </h1>
-            </div> <!--header-->
-         
-             <!--container inside header-->
-                    
-         </div> <!--row end header-->
-               <!-- <div class="playerName">-->
-            <div class="row" >
-             <div class = "col-4">
-               <!-- <p>Player One Picks</p>-->
-             </div> 
-             <div class = "col-4">
-                <p></p>
-             </div> 
-             <div class = "col-4">
-                <!-- <p>Player Two Picks</p>-->
-             </div>  
-               <!--  </div>--> 
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-         </div>
-         <div class=" row d-flex" id="playsCardArea"> <!-- playing area-->
-            <div class = "col-6 d-flex justify-content-left ">
-               <p class ="card" id="card1">0</p>
-            </div> 
-            <div class="col-6 d-flex justify-content-end ">
-                <p class ="card" id="card2">0</p>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BlackJack 21</title>
+    <meta name="description" content="BlackJack 21 game" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom1.css" />
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div>
+        <div class="row justify-content-center">
+            <div class="header">
+                <h1 class="col-12 display-1 align-items-start" id="title">
+                    BlackJack <span id="twentyOne">21</span>
+                </h1>
             </div>
-         </div><!-- dealt card display row-->
-         <div class = "row justify-content-center">
-            <div class = "col-4 text-center">
-                <p id="draw1">card played:  <span id=cardPlayed1></span></p>
-             </div> 
-             <div class = "col-4">
-                <p></p>
-             </div> 
-             <div class = "col-4 text-center">
-               <p id="draw2">card played:  <span id=cardPlayed2></span></p>
-             </div> 
+            <!--header-->
+        </div>
+        <div class="container justify-content-center">
+            <h1 class="display-3 text-center">Welcome to the table</h1> <br><br><br>
 
-         </div><!-- score area row end-->
-         <div class= "container display-3">
-           <div class = "row d-flex mt-5 ">
-            <div class = "col-4 d-flex align-items-end justify-content-start" id="freeze1">
-                <button  type="button" class ="btn btn-success align-item-left " id="player1"> Play One Freeze</button>
-             </div> 
-             <div class = "col-4" id="deal">
-                <button  type="button" class ="btn btn-lg btn-dark btn-block" id="playBtn">Deal</button>
-             </div> 
-             <div class = "col-4 d-flex align-items-end justify-content-end " id="freeze2">
-                <button  type="button" class ="btn  btn-info ">Play One Freeze</button>
-             </div> 
+            <div class="form-group mb-3">
+               <!-- <div class="input-group-prepend">-->
+                    <label for="e_name"> Enter Your Name </label>
+                <!-- </div> -->
+                <input type="text" class="form-control" id="e_name" placeholder="Name" />
+            </div>
+            <br><br>
+            <br>
 
-           </div>  
+            <div class="container text-center">
+                <h2 class="col-12 display-3 "> Instruction </h2>
+                <p class=" text-left">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nulla ligula, cursus fermentum lectus
+                    nec, pretium aliquam sapien. Fusce sollicitudin, tortor vitae mattis rutrum, quam est scelerisque
+                    sapien, eget placerat sapien erat eget sapien. Suspendisse ex quam, pretium non vestibulum eget,
+                    luctus non leo. Phasellus sit amet elementum ligula, ut pretium lacus. Pellentesque eget magna
+                    interdum, luctus justo nec, feugiat orci. Duis iaculis diam at nisl semper venenatis. Sed vitae
+                    mollis nibh. Integer at arcu est. Vivamus in dignissim tellus, ac consequat velit. In hac habitasse
+                    platea dictumst. Sed ex nisl, luctus in arcu viverra, mattis imperdiet neque. Nullam sed orci luctus
+                    libero ultrices laoreet ut vel arcu. Etiam quis nulla ut purus egestas lobortis commodo ut elit. Sed
+                    imperdiet consectetur tincidunt. Etiam turpis leo, pharetra sit amet orci a, porta malesuada magna.
 
-         </div>
+                    Mauris consectetur porttitor aliquam. Sed lorem libero, lacinia a enim a, feugiat ornare sem.
+                    Pellentesque faucibus, nisl et ultrices malesuada, magna urna egestas nibh, quis cursus massa arcu
+                    sit amet lorem. Integer vel consectetur ante. Nullam sapien nunc, mattis quis dictum id, eleifend
+                    sed quam. Curabitur posuere ante id mattis elementum. Ut nec neque in ipsum egestas hendrerit quis
+                    ut arcu.
+                </p>
+            </div>
 
+      </div>
 
-        </div><!--main container-->
+ </div>
 
-
-
+            <div id="play_div">
+                <button type="button" class="btn btn-danger" id="play">Play</button>
+            </div> <!-- button end -->
         
-<<<<<<< HEAD
-        <script async src="js/bootstrap.min.js" ></script>
-        <script async src="js/jquery-3.4.1.min.js" ></script>
-        <script async src="js/app.js" ></script>
-=======
-        <script  src="js/bootstrap.min.js" ></script>
-        <script  src="js/jquery-3.4.1.min.js" ></script>
-        <script  src="js/app.js" ></script>
->>>>>>> 4b5f3eeb31e324b912dc5c2965f4118d4ec5c4b6
-    </body>
+   
+    <!-- main container -->
+     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>   
+    <script src="js/app.js"></script>
+    <script src ="js/custom.js"></script>
+</body>
+
 </html>

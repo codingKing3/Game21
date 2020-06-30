@@ -16,32 +16,50 @@
 
 }
 */
-.btn{
+body {
+    background: #2980B9;
+  
+}
+
+.btn {
     margin-top: 50px;
 }
-.card{
+
+.card {
+    background: #2980B9;
     font-size: 100px;
     font-family: 'Anton', sans-serif;
+    
 }
-#title{
+
+#title {
     font-family: 'Metal Mania', cursive;
 }
 
-#twentyOne{
-   display:none;
-   font-size: 1.5em;
+#twentyOne {
+    display: none;
+    font-size: 1.5em;
 }
 
-#draw1{
+#draw1,#draw2 {
     font-size: x-large;
     font-family: 'Anton', sans-serif;
 }
-.busted{
+
+.busted {
     font-family: 'Metal Mania', cursive;
     font-size: 4em;
-    color: red; 
+    color: red;
 }
 
-.stop{
-    opacity: 0%;;
+.stop {
+    opacity: 0%;
+    ;
+}
+
+#e_name {
+    max-width: 400px;
+}
+#play_div{
+    margin-left: 100px;
 }
