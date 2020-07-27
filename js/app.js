@@ -1,7 +1,7 @@
 $(document).ready(function () {
     //alert("im in"); 
     $("#twentyOne").css("color", "yellow");
-    $("#twentyOne").show('slow');
+    //$("#twentyOne").show('slow');
     $("#twentyOne").css("text-decoration", "underline");
 
 
@@ -29,15 +29,12 @@ function addName(){
   // storing name to local storeage 
 // go to next page 
   
-let play = document.getElementById('play');
-
-  play.addEventListener("click",function(){
+  let playing = document.getElementById('play');
+  playing.addEventListener("click",function() {
         addName();
         console.log('added');
-       
-
       location.href = "public/gameBoard.html";    
   });     
-//};
+
 });
 
