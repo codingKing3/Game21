@@ -42,6 +42,11 @@ body {
 }
 
 #draw1,#draw2 {
+    display: inline-block;    
+    font-size: x-large;
+    font-family: 'Anton', sans-serif;
+}
+#cardPlayed1,#cardPlayed2{
     font-size: x-large;
     font-family: 'Anton', sans-serif;
 }

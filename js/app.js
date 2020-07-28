@@ -15,15 +15,16 @@ $(document).ready(function () {
 //window.onload = function(){
 
 function addName(){
-    let name = [];
-    let playerName ={
-        name: document.getElementById('e_name').value
+    //let name = [];
+    let input_name = document.getElementById('e_name').value
+   /* let playerName ={
+        name: input_name
     };
     
     name.push(playerName);
-    pName =document.getElementById('e_name').value;
-    sessionStorage.setItem("name",pName);
-    console.log(name); 
+    pName =document.getElementById('e_name').value; */
+    sessionStorage.setItem("name",input_name);
+     
   }
 
   // storing name to local storeage 
@@ -32,7 +33,8 @@ function addName(){
   let playing = document.getElementById('play');
   playing.addEventListener("click",function() {
         addName();
-        console.log('added');
+       // person = sessionStorage.getItem("name")
+        //alert(person); 
       location.href = "public/gameBoard.html";    
   });     
 

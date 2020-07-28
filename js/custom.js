@@ -4,14 +4,14 @@ let deal = document.getElementById('playBtn');
 let cardplayed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 let showMyCard = document.getElementById("card1");
 let player1 = document.querySelector("#player1");
-let drawPlayer1 = document.querySelector("#cardPlayed1");
+let drawPlayer1 = document.getElementById("cardPlayed1");
 let player1Hold = document.getElementById("freeze1");
 let pName = document.getElementById("draw1");
 let total1 = 0;
 let hold = false;
 
 // add player name
-pName.innerHTML = localStorage.getItem("name");
+pName.innerHTML = sessionStorage.getItem("name")+":  ";
 
 
 // will get random card number and add card value to total amount
@@ -32,7 +32,8 @@ deal.addEventListener("click", function () {
     randomNum = Math.floor((Math.random() * 11) + 1);
     console.log(randomNum);
     getNumber = cardplayed[randomNum - 1];
-    drawPlayer1.innerHTML = getNumber;
+    drawPlayer1.innerHTML = "  " + getNumber;
+    
     total1 = total1 + getNumber;
     if (hold === true){
        console.log("player one Hold");
