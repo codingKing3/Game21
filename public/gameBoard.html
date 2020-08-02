@@ -21,7 +21,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
-         <div class = "row justify-content-center">
+         <div class = "row justify-content-center" id="titleRow">
           <div class = "header">
              <h1 class =" col-12 display-1 align-items-start animate_animated animate__heartBeat" id="title">
                 BlackJack <span  id="twentyOne">21</span> </h1>
@@ -30,16 +30,16 @@
              <!--container inside header-->
                     
          </div> <!--row end header-->
-               <!-- <div class="playerName">-->
+               
             <div class="row" >
-             <div class = "col-4">
+             <div class = "col-4 "  id="firstPlay">
                <!-- <p>Player One Picks</p>-->
              </div> 
              <div class = "col-4">
-                <p></p>
+               
              </div> 
-             <div class = "col-4">
-                <!-- <p>Player Two Picks</p>-->
+             <div class = "col-4 text-right" id= "house">
+                 House
              </div>  
                <!--  </div>--> 
 
@@ -56,16 +56,38 @@
 
           </div><!-- dealt card display row-->
          <div class = "row justify-content-center">
-            <div class = "col-4 text-center">
-                <p id="draw1"> </p><span id="cardPlayed1"><img src="../images/card_deck/JPEG/Yellow_back.jpg" 
-                  style="width:100px;height:110px;" id="showCard"> </span>
+            <div class = "col-4 text-left" id="cardPlayed1" style="width:100px;height:110px;"  >
+                              
+                 <img src="../images/card_deck/JPEG/blue_back.jpg" 
+                  style="width:150px;height:160px;" id="showCard">
+            </div> 
+             <!-- add button for choice of ACE 1 or 11   -->   
+             <div class = "col-4 " id="middleDisplay">
+                <p style="padding-bottom: 0px; margin-bottom: 0px; ">
+                   You have drawn a ACE &nbsp;&nbsp; choose how to use:                    
+                </p>              
+                <p style="padding-bottom: 0px; margin-bottom: 0px; margin-left: 100px;">
+                   1 or 11
+                </p>
+
+                <button type = "button" class="btn btn-success  choicebtn" id="one"
+                style="margin-top: 5px; margin-left: 20px;"> 
+                    1 
+                 </button> 
+                
+                <button type = "button" class="btn btn-success choicebtn" id="eleven"
+                style="margin-top: 5px; padding-left: 5px;"> 
+                   11 
+                </button>
+
+                <p > Click You Choice </p>
+              
              </div> 
-             <div class = "col-4">
-                <p></p>
-             </div> 
-             <div class = "col-4 text-center">
-               <p id="draw2">House: </p> <span id="cardPlayed2"><img src="../images/card_deck/JPEG/QD.jpg" 
-                  style="width:100px;height:110px;"></span>
+          <!-- End of Ace choice play-->
+
+             <div class = "col-4 text-right" id="draw2">
+               <img src="../images/card_deck/JPEG/blue_back.jpg" 
+                  style="width:150px;height:160px;"> 
              </div> 
 
          </div><!-- score area row end-->

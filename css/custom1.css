@@ -17,6 +17,7 @@
 }
 */
 body {
+    font-family: 'Anton', sans-serif;
     background: #2980B9;
   
 }
@@ -28,12 +29,13 @@ body {
 .card {
     background: #2980B9;
     font-size: 100px;
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
     
 }
 
 #title {
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
+    padding-bottom: 20px;
 }
 
 #twentyOne {
@@ -44,11 +46,11 @@ body {
 #draw1,#draw2 {
     display: inline-block;    
     font-size: x-large;
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
 }
-#cardPlayed1,#cardPlayed2{
+#cardPlayed1,#cardPlayed2,#firstPlay,#house{
     font-size: x-large;
-    font-family: 'Anton', sans-serif;
+    /* font-family: 'Anton', sans-serif; */
 }
 
 .busted {
@@ -67,4 +69,8 @@ body {
 }
 #play_div{
     margin-left: 100px;
+}
+
+#middleDisplay{
+    display: none;
 }
