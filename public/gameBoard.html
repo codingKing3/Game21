@@ -62,27 +62,28 @@
                   style="width:150px;height:160px;" id="showCard">
             </div> 
              <!-- add button for choice of ACE 1 or 11   -->   
-             <div class = "col-4 " id="middleDisplay">
+             <form class = "col-4 " id="middleDisplay">
                 <p style="padding-bottom: 0px; margin-bottom: 0px; ">
                    You have drawn a ACE &nbsp;&nbsp; choose how to use:                    
                 </p>              
                 <p style="padding-bottom: 0px; margin-bottom: 0px; margin-left: 100px;">
-                   1 or 11
+                   1 or 11 
                 </p>
 
-                <button type = "button" class="btn btn-success  choicebtn" id="one"
-                style="margin-top: 5px; margin-left: 20px;"> 
-                    1 
-                 </button> 
+                <input type = "radio" name="gotAce" value= "1" id="one"
+                style="margin-top: 5px; margin-left: 20px;" /> 
+                  
+               <label for="one"> 1</label>
                 
-                <button type = "button" class="btn btn-success choicebtn" id="eleven"
-                style="margin-top: 5px; padding-left: 5px;"> 
-                   11 
-                </button>
-
-                <p > Click You Choice </p>
+               <input type = "radio" name="gotAce" id="eleven" value= "11"
+                style="margin-top: 5px; margin-left: 20px;" /> 
+                  
+               <label for="one"> 11</label><br> 
+                
+               <button id="submit" type="button" >Choose One</button>
+               <!-- <p > Click You Choice </p> --> 
               
-             </div> 
+             </form> 
           <!-- End of Ace choice play-->
 
              <div class = "col-4 text-right" id="draw2">
