@@ -16,15 +16,61 @@
 
 }
 */
-.btn{
+body {
+    font-family: 'Anton', sans-serif;
+    background: #2980B9;
+  
+}
+
+.btn {
     margin-top: 50px;
 }
-.card{
+
+.card {
+    background: #2980B9;
     font-size: 100px;
+    /* font-family: 'Anton', sans-serif; */
+    
 }
 
-#twentyOne{
-   display:none;
-   font-size: 3em;
+#title {
+    /* font-family: 'Anton', sans-serif; */
+    padding-bottom: 20px;
 }
 
+#twentyOne {
+   /* display: none; */
+    font-size: 1.5em;
+}
+
+#draw1,#draw2 {
+    display: inline-block;    
+    font-size: x-large;
+    /* font-family: 'Anton', sans-serif; */
+}
+#cardPlayed1,#cardPlayed2,#firstPlay,#house{
+    font-size: x-large;
+    /* font-family: 'Anton', sans-serif; */
+}
+
+.busted {
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 4em;
+    color: red;
+}
+
+.stop {
+    opacity: 0%;
+    ;
+}
+
+#e_name {
+    max-width: 400px;
+}
+#play_div{
+    margin-left: 100px;
+}
+
+#middleDisplay{
+    visibility: hidden;
+}

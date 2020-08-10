@@ -1,31 +1,27 @@
-$(document).ready(function(){
-   $("#twentyOne").css("color","yellow"); 
-   $("#twentyOne").show('slow');
-   $("#twentyOne").css("text-decoration","underline");
+$(document).ready(function () {   
+    $("#twentyOne").css("color", "yellow");
+    $("#twentyOne").css("text-decoration", "underline");
+
+
+ // on play button click check for input in name-space
+ // if no-name show drop down
+ // if set name min length
+ // link to player page : upgrade=>later use ajax link
+ // get player name: replace player 1 with player name
+
+
+ //window.onload = function(){
+
+  // storing name to local storeage 
+ // go to next page 
   
-});
-
-let deal = document.getElementById('playBtn');
-let cardplayed = [1,2,3,4,5,6,7,8,9,10,11];
-let showMyCard = document.getElementById("card1");
-let player1 = document.querySelector("#player1");
-let total1 = 0;
-
-// will get random card number and add card value to total amount
-deal.addEventListener("click",function(){
-    //showMyCard.innerHTML="<img src = 'images/AC.jpg'>";
-    randomNum = Math.floor((Math.random()*11)+1);
-    getNumber =cardplayed[randomNum-1];
-    total1 = total1 + getNumber;
-    if(total1 < 22){
-    showMyCard.innerHTML = total1;
-     } 
-     else if (total1 > 21){
-         showMyCard.innerHTML = "BUSTED";
-     }
-});
-
-// will allow player one to freeze accepting cards before busting out over 21
-player1.addEventListener("click",function(){
+ // let playing = document.querySelector('play');
+  $("#play").on("click",function(){
+        //addName();
+        let input_name = document.getElementById('e_name').value;
+        sessionStorage.setItem("name",input_name);         
+        location.href = "public/gameBoard.html";    
+  });     
 
 });
+

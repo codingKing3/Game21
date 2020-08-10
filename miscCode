@@ -1,0 +1,33 @@
+
+            //$('#middleDisplay').css("visibility","visible");
+            
+            do {
+
+                document.getElementById('one').addEventListener("click", function(){            
+                    $('#middleDisplay').css("display","none");
+                    getNumber=1;
+                 }); // end button 1
+
+               // document.getElementById('one').addEventListener("click",oneChoice());
+
+               // document.getElementById('eleven').addEventListener("click",evenChoice());
+           } // do end
+
+            /* document.getElementById('one').addEventListener("click", function(){            
+                $('#middleDisplay').css("display","none");
+                getNumber=1;
+             }); // end button 1
+              
+            document.getElementById('eleven').addEventListener("click", function(){
+                $('#middleDisplay').css("display","none");
+                getNumber = 11;
+            });  // end button 2    */
+           while ((document.getElementById('one').clicked==false) ||
+           (document.getElementById('two').clicked==false)); 
+           $('#middleDisplay').css("visibility","visible");
+
+           // total1 = total1 + getNumber;
+
+         } 
+
+         total1 = total1 + getNumber;
