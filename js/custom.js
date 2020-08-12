@@ -37,17 +37,17 @@ $(document).ready(function () {
             });
 
             function chooseOne() {
-                $("input[type=radio]").on("click",function(){
-                    console.log('im in');
-                    getnumber = 11;
-                    total1 = total1 + getNumber;
-                    if (total1 < 22) {
-                        showMyCard.innerHTML = total1;
-                    }
-                  
-                });
 
-              return getnumber; 
+              console.log('im in');
+                    getnumber = 11;
+              // $("input[type=radio]").on("click",function(){
+                    
+                    /* total1 = total1 + getNumber;
+                    if (total1 < 22) {
+                        showMyCard.innerHTML = total1; */
+                   // }
+                  
+                  // return getnumber; 
             } // end function
 
             // deal button will return player card when clicked
@@ -69,8 +69,8 @@ $(document).ready(function () {
                          $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg"); 
                                               
                         $("#AceDraw").modal(
-                            getNumber = chooseOne()                      
-                                              
+                            chooseOne()                      
+                                       
                          
                         );
                        
@@ -78,10 +78,10 @@ $(document).ready(function () {
 
                            // $("#showCard").attr("src", "../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg");
                                                      
-                          /*   total1 = total1 + getNumber;
+                            /* total1 = total1 + getNumber;
                             if (total1 < 22) {
                                 showMyCard.innerHTML = total1;
-                            } */
+                            }  */
                       
 
                         
