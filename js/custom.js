@@ -5,15 +5,11 @@ $(document).ready(function () {
                     this.name = name;
                 }
             } // end class definition
-
-            //let deal = document.getElementById("playBtn");
-            //
+            
             let showMyCard = document.getElementById("card1");
-            // let player1 = document.querySelector("#player1");
+           
             let drawPlayer1 = document.getElementById("cardPlayed1");
-            //let player1Hold = document.getElementById("freeze1");
-            //let draw1 = document.getElementById("draw1");
-            // let show = document.getElementById("showCard");
+           
             let total1 = 0;
             let hold = false;
             /* let cardType = ["C", "D", "H", "S"];
