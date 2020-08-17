@@ -117,6 +117,16 @@ $(document).ready(function () {
                     if ((getNumber === 1) || (getNumber === 11)) {                       
                         drawOneEleven(getNumber);                    
                     } // if draw a Ace
+
+                    // check for BUST over 21
+                    if (total1 > 21){
+                         console.log('YOU BUSTED');
+                    } // end over 21
+                   
+                    // check if total is 21
+                    if (total1 === 21){
+                      console.log('you hit 21');
+                    } // end if 
                  
                   // $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg"); 
                   // $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
