@@ -5,12 +5,8 @@ $(document).ready(function () {
                     this.name = name;
                 }
             } // end class definition
-<<<<<<< HEAD
-            
-=======
 
           
->>>>>>> cb8e5543520e1973ce15489565d3cc23eeaa176e
             let showMyCard = document.getElementById("card1");
            
             let drawPlayer1 = document.getElementById("cardPlayed1");
@@ -26,96 +22,112 @@ $(document).ready(function () {
             //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
             // function will allow named player to freeze play on current total
-            $("#freeze1").on("click", function () {
+            $("#player1Freeze").on("click", function () {
+                console.log('You Pressed Freeze');
                 let iHoldP1 = document.getElementById("draw1");
                 let noCardP1 = document.getElementById("cardPlayed1");
                 hold = true;
-                iHoldP1.innerHTML = "HOLD";
-                noCardP1.innerHTML = "";
+              
+                noCardP1.innerHTML = "Hold";
             });
+           
+            // function if random number is 10 return face card
+            function draw10(getNumber){
+              let faceCard = [10, "J", "Q", "K"];
+              let cardType = ["C", "D", "H", "S"];
+              choiceFaceCard = faceCard[Math.floor(Math.random() * faceCard.length)];
+              let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
+              $("#showCard").attr("src", "../images/card_deck/JPEG/" + choiceFaceCard + cardType_index + ".jpg");
+              total1 = total1 + getNumber;
+              if (total1 < 22) {
+                  showMyCard.innerHTML = total1; 
 
-            function chooseOne() {
+              }            
+            } // end draw10
+            
+             // function for numbers 1 - 9
+             // function if random is neither 1,11,10 the draw is default cards
+                   // if ((getNumber != 1) && (getNumber !=11) && (getNumber != 10))
+                    function drawJustNumber(getNumber){                      
+                      let cardType = ["C", "D", "H", "S"]; 
+                      let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];    
+                        $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
+                       total1 = total1 + getNumber;
+                       if (total1 < 22) {
+                           showMyCard.innerHTML = total1;
+                       } // end if
+                      
+                   } // end function for 1 - 9 draw
 
-              console.log('im in');
-                    getnumber = 11;
-              // $("input[type=radio]").on("click",function(){
-                    
-                    /* total1 = total1 + getNumber;
-                    if (total1 < 22) {
-                        showMyCard.innerHTML = total1; */
-                   // }
-                  
-                  // return getnumber; 
-            } // end function
+             // function will be called if draw is 1 or 11 which is a ACE
+             
+                   function drawOneEleven(getNumber){
+                    console.log('Iam in drawOneEleven', getNumber);                    
+                    let cardType = ["C", "D", "H", "S"]; 
+                    let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
+                    $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg"); 
+                    getNumber = 0;                      
+                    $("#AceDraw").modal(
+                      $("input[type='radio']").click(function(){
+                        let radioValue = $("input[name='gotAce']:checked").val();
+                        if(radioValue === "1"){
+                            console.log("You picked " + radioValue);
+                            getNumber = 1;
+                            total1 = total1 + getNumber;
+                            if (total1 < 22) {
+                           showMyCard.innerHTML = total1;
+                       } // end if
+                           $('#closeModal').click();
+                           //$('input[name="gotAce"]').buttonset('refresh');
+                            
+                        } else if (radioValue === "11"){
+                          console.log("You picked " + radioValue);
+                          getNumber = 11;
+                          total1 = total1 + getNumber;
+                          if (total1 < 22) {
+                           showMyCard.innerHTML = total1;
+                       } // end if
+                          $('#closeModal').click();
+                        }// end if
+                     })                     
+                    );   
+                   // console.log('getNumber was assigned: ',getNumber);
+                  }// end function for 1 or 11 draw
+
 
             // deal button will return player card when clicked
-            $("#playBtn").on("click", function () {
-                    //let cardplayed = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];   
-                    let cardType = ["C", "D", "H", "S"];
-                    let faceCard = [10, "J", "Q", "K"];
+            $("#playBtn").on("click", function () {                   
                     // get random number between 1 to 11  and 
-                    // get random card type
-                    let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
+                   // $("input[name='gotAce']").attr('checked',false);
                     let getNumber = Math.floor((Math.random() * 11) + 1);
-                    //let getNumber = randomNum;  //cardplayed[randomNum - 1];
-                   //let getNumber = 1;
+                    // get random card type
+                    getNumber = 1;
+                    console.log(getNumber);
+                   
+                    if (getNumber === 10){
+                      draw10(getNumber);
+                    }  // end if draw is 10
+                    
+                    if ((getNumber != 1) && (getNumber !=11) && (getNumber != 10)){                   
+                        drawJustNumber(getNumber);
+                    } // end if draw is 1 - 9 draw
+
+                    if ((getNumber === 1) || (getNumber === 11)) {                       
+                        drawOneEleven(getNumber);                    
+                    } // if draw a Ace
+                 
                   // $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg"); 
-                  $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
+                  // $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
                       
                                               
                 });  // End playBtn onclick
 
-              }); // End onload
+        }); // End onload
+  
+ //================== OLD VERSION CODE FOR RE-USE =========================================================       
 
-              // function if random number is a 1 or 11 then draw is a Ace      
-                  //  if ((getNumber === 1) || (getNumber === 11)) {
-                    function drawOneEleven(){
-                        let uPicked = 0;
+        
 
-                         $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg"); 
-                                              
-                        $("#AceDraw").modal(
-                            chooseOne()                      
-                                       
-                         
-                        );
-                       
-                          
-
-                           // $("#showCard").attr("src", "../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg");
-                                                     
-                            /* total1 = total1 + getNumber;
-                            if (total1 < 22) {
-                                showMyCard.innerHTML = total1;
-                            }  */
-                      
-
-                        
-                    } // end main if
-
-              // function if random number is 10 return face card
-                    function draw10(){
-                        choiceFaceCard = faceCard[Math.floor(Math.random() * faceCard.length)];
-                        $("#showCard").attr("src", "../images/card_deck/JPEG/" + choiceFaceCard + cardType_index + ".jpg");
-                        total1 = total1 + getNumber;
-                        if (total1 < 22) {
-                            showMyCard.innerHTML = total1;
-
-                        }
-                        console.log('second total', total1);
-                    }
-//=================================================================================================================
-              // function if random is neither 1,11,10 the draw is default cards
-                   // if ((getNumber != 1) && (getNumber !=11) && (getNumber != 10)){
-                    function drawJustNumber(){ 
-                       $("#exampleModal").modal();     
-                         $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
-                        total1 = total1 + getNumber;
-                        if (total1 < 22) {
-                            showMyCard.innerHTML = total1;
-                        }
-                        console.log('third total', total1);
-                    } // end if    
 
               //=======================================================================================================
              // function: if over 21 player busted
