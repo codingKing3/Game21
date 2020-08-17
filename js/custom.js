@@ -39,10 +39,10 @@ $(document).ready(function () {
               let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
               $("#showCard").attr("src", "../images/card_deck/JPEG/" + choiceFaceCard + cardType_index + ".jpg");
               total1 = total1 + getNumber;
-              if (total1 < 22) {
+              
                   showMyCard.innerHTML = total1; 
 
-              }            
+                      
             } // end draw10
             
              // function for numbers 1 - 9
@@ -53,9 +53,9 @@ $(document).ready(function () {
                       let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];    
                         $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
                        total1 = total1 + getNumber;
-                       if (total1 < 22) {
+                       
                            showMyCard.innerHTML = total1;
-                       } // end if
+                       
                       
                    } // end function for 1 - 9 draw
 
@@ -74,20 +74,22 @@ $(document).ready(function () {
                             console.log("You picked " + radioValue);
                             getNumber = 1;
                             total1 = total1 + getNumber;
-                            if (total1 < 22) {
+                            
                            showMyCard.innerHTML = total1;
-                       } // end if
+                       
                            $('#closeModal').click();
                            //$('input[name="gotAce"]').buttonset('refresh');
+                           $('input[type="radio"]').prop('checked' , false); 
                             
                         } else if (radioValue === "11"){
                           console.log("You picked " + radioValue);
                           getNumber = 11;
                           total1 = total1 + getNumber;
-                          if (total1 < 22) {
+                         
                            showMyCard.innerHTML = total1;
-                       } // end if
+                      
                           $('#closeModal').click();
+                          $('input[type="radio"]').prop('checked' , false);
                         }// end if
                      })                     
                     );   
@@ -101,7 +103,7 @@ $(document).ready(function () {
                    // $("input[name='gotAce']").attr('checked',false);
                     let getNumber = Math.floor((Math.random() * 11) + 1);
                     // get random card type
-                    getNumber = 1;
+                   // getNumber = 1;
                     console.log(getNumber);
                    
                     if (getNumber === 10){
