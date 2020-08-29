@@ -17,11 +17,25 @@ $(document).ready(function () {
   
  // let playing = document.querySelector('play');
   $("#play").on("click",function(){
+        p_info_arr = []; // hold player info
         //addName();
         let input_name = document.getElementById('e_name').value;
-        sessionStorage.setItem("name",input_name);         
-        location.href = "public/gameBoard.html";    
-  });     
+        let input_email = document.getElementById('eMail').value;
+        let pInfo = {
+              name:input_name,
+              email:input_email
+            };
+            
+        
+        //console.log(input_name,input_email);
+        p_info_arr.push(pInfo); // place in array
+       
+        console.log(p_info_arr);    
+        sessionStorage.setItem("info",JSON.stringify(p_info_arr)); 
+        //sessionStorage.setItem('email',input_email);        
+         location.href = "public/gameBoard.html";
+  }); 
 
+      
 });
 

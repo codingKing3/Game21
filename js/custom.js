@@ -1,11 +1,7 @@
 $(document).ready(function () {
 
-            class playerInfo {
-                constructor(name) {
-                    this.name = name;
-                }
-            } // end class definition
-
+            let playerInfo = JSON.parse(sessionStorage.getItem('info'));
+            console.log(playerInfo);
           
             let showMyCard = document.getElementById("card1");
            
@@ -15,9 +11,12 @@ $(document).ready(function () {
             let hold = false;
            
             // add player name
-            const personName = new playerInfo(sessionStorage.getItem("name"));
-            $("#firstPlay").html(personName.name);
-
+           // const personName = new playerInfo(sessionStorage.getItem("name"));
+          //  const personEmail = new playerInfo(sessionStorage.getItem("email"));
+         
+            plyerName = playerInfo[0].name;
+            $("#firstPlay").html(plyerName);
+            
             // will get random card number and add card value to total amount
             //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
@@ -58,6 +57,42 @@ $(document).ready(function () {
                        
                       
                    } // end function for 1 - 9 draw
+
+                   // function when you busted
+                   function uBust(){
+                     console.log('I am in');
+                     $.ajax({
+                      url: '/public/youBusted.html',
+                      dataType: 'html',
+                      success: function(data) {
+                        console.log(data);
+                      }
+                    });
+                        
+                     /* let url =this.href;
+                     //$('#cardPlayed1').load("/public/youBusted.html #cardPlayed");
+                    // $.get('/public/youBusted.html');
+                     let xhr = new XMLHttpRequest();
+                     console.log(xhr);
+                     if (xhr.status === 200){
+
+                      document.getElementById('cardPlayed1').innerHTML = xhr.responseText;
+
+                     }
+
+                     xhr.open('GET',"/public/youBusted.html", true);
+                     xhr.send(); */
+ 
+                    console.log('i am out');
+
+
+                    //$("#showCard").load("../public/youBusted.html", function(responseTxt, statusTxt, xhr){
+                   
+                   }
+
+
+
+                   // end 
 
              // function will be called if draw is 1 or 11 which is a ACE
              
@@ -121,6 +156,8 @@ $(document).ready(function () {
                     // check for BUST over 21
                     if (total1 > 21){
                          console.log('YOU BUSTED');
+                         uBust();
+                        
                     } // end over 21
                    
                     // check if total is 21
