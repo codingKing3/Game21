@@ -4,7 +4,12 @@ $(document).ready(function () {
 
   let showMyCard = document.getElementById("card1");
 
-  let drawPlayer1 = document.getElementById("cardPlayed1");
+  const player = {
+      player1_Total: 0,
+      House_Total:0
+  };
+
+  //let drawPlayer1 = document.getElementById("cardPlayed1");
 
   let total1 = 0;
   let hold = false;
@@ -15,10 +20,15 @@ $(document).ready(function () {
 
   plyerName = playerInfo[0].name;
   $("#firstPlay").html(plyerName);
+  //plyerEmail = playerInfo[0].email;
+ 
+
 
   // will get random card number and add card value to total amount
   //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
+
+  // ====Function area ===========
   // function will allow named player to freeze play on current total
   $("#player1Freeze").on("click", function () {
     console.log("You Pressed Freeze");
@@ -71,11 +81,9 @@ $(document).ready(function () {
     }); */
 
 
-
+//=======================================================================
   // function will be called if draw is 1 or 11 which is a ACE
-
-  function drawOneEleven(getNumber) {
-    
+  function drawOneEleven(getNumber) {    
     let cardType = ["C", "D", "H", "S"];
     let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
     $("#showCard").attr(
@@ -106,14 +114,40 @@ $(document).ready(function () {
           $("#closeModal").click();
           $('input[type="radio"]').prop("checked", false);
         } // end if
-      })
+
+        checkPlayerStats();
+      })      
     );
     console.log("you total so far is: ", total1);
     // console.log('getNumber was assigned: ',getNumber);
   } // end function for 1 or 11 draw
+//======================================================================
 
+//==========================================================================
   // function to check if player BUSTED over 21 or hit 21
-  function checkPlayerStats() {}
+  function checkPlayerStats(){
+    // check for BUST over 21
+    if (total1 > 21) {
+      player.player1_Total = total1;
+      total1 = 0;
+      showMyCard.innerHTML= `${player.player1_Total} BUSTED`;
+      console.log("YOU BUSTED");
+      // uBust();
+    } // end over 21
+
+    if (total1 === 21) {
+      console.log("you hit 21");
+      player.player1_Total = total1;
+      showMyCard.innerHTML= `${player.player1_Total} WIN!!`;
+    } // end if
+
+
+  } // end function
+
+  
+
+
+  //=======================================================================
 
   // deal button will return player card when clicked
   $("#playBtn").on("click", function () {
@@ -125,34 +159,60 @@ $(document).ready(function () {
 
     if (getNumber === 10) {
       draw10(getNumber);
+      checkPlayerStats();
     } // end if draw is 10
 
     if (getNumber != 1 && getNumber != 11 && getNumber != 10) {
       drawJustNumber(getNumber);
+      checkPlayerStats();
     } // end if draw is 1 - 9 draw
 
     if (getNumber === 1 || getNumber === 11) {
       drawOneEleven(getNumber);
       console.log('jumped out');
+      checkPlayerStats();
       //console.log("you total so far is: ", total1);
     } // if draw a Ace
 
-    // check for BUST over 21
+    /* // check for BUST over 21
     if (total1 > 21) {
+      player.player1_Total = total1;
+      total1 = 0;
+      showMyCard.innerHTML= `${player.player1_Total} BUSTED`;
       console.log("YOU BUSTED");
       // uBust();
-    } // end over 21
-
+    } // end over 21 */
+/* 
     // check if total is 21
     if (total1 === 21) {
       console.log("you hit 21");
     } // end if
+ */
+
+
+
+
 
     // $("#showCard").attr("src","../images/card_deck/JPEG/" + "A" + cardType_index + ".jpg");
     // $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
     //console.log("you total so far is: ", total1);
   }); // End playBtn onclick
 }); // End onload
+
+
+
+
+// ==== code to select and switch players 
+
+
+// ===== store each person code in local storage  
+// ===== code to determine winner
+
+
+
+
+
+
 
 //================== OLD VERSION CODE FOR RE-USE =========================================================
 
@@ -196,24 +256,7 @@ $(document).ready(function () {
 /* $("#showCard").attr('src','../images/card_deck/JPEG/' + getNumber + 
                      cardType_index + '.jpg');  */
 //======================================================
-// if (hold === true) {
-//   console.log("player one Hold");
-//   showMyCard.innerHTML = "Hold";
-//   drawPlayer1.classList.add("stop");
-// } else if (total1 < 22) {
-//   showMyCard.innerHTML = total1;
-// } else if (total1 > 21) {
-//   let vanish = document.getElementById("draw1");
-//   showMyCard.classList.add("busted");
-//   showMyCard.innerHTML = "BUSTED";
-//   $("#playBtn").attr("disabled", true);
 
-//drawPlayer1.classList.add("stop");
-//vanish.classList.add("stop");
-
-// add else if total1 === 21  you win
-// need to determine what happen if win
-// need to code to determine who is close to 21 to win
 
 //======================================================================
 // will allow player one to freeze accepting cards before busting out over 21
