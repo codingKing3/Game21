@@ -17,6 +17,7 @@ $(document).ready(function () {
   
  // let playing = document.querySelector('play');
   $("#play").on("click",function(){
+    debugger
         p_info_arr = []; // hold player info
         //addName();
         let input_name = document.getElementById('e_name').value;

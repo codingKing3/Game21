@@ -52,7 +52,7 @@ $(document).ready(function () {
     let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
     $("#showCard").attr(
       "src",
-      "../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg"
+      "../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg" 
     );
     total1 = total1 + getNumber;
 
