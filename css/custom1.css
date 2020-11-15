@@ -18,7 +18,9 @@
 */
 body {
     font-family: 'Anton', sans-serif;
-    background: #2980B9;
+    background: rgb(16, 100, 16); 
+    /* background-image: url("../images/BjTable1.jpg"); */
+
   
 }
 
@@ -27,7 +29,7 @@ body {
 }
 
 .card {
-    background: #2980B9;
+    background: rgb(16, 100, 16);
     font-size: 100px;
     /* font-family: 'Anton', sans-serif; */
     
@@ -43,7 +45,7 @@ body {
     font-size: 1.5em;
 }
 
-#draw1,#draw2 {
+#houseDraw2 {
     display: inline-block;    
     font-size: x-large;
     /* font-family: 'Anton', sans-serif; */
@@ -74,3 +76,12 @@ body {
 #middleDisplay{
     visibility: hidden;
 }
+
+.btn-circle.btn-xl { 
+    width: 170px; 
+    height: 170px; 
+    padding: 10px 16px; 
+    border-radius: 135px; 
+    font-size: 12px; 
+    text-align: center; 
+} 

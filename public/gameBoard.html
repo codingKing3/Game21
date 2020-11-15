@@ -50,7 +50,7 @@
             </div> 
             
    
-            <div class="col-6 d-flex align-items-end border-0 card ">
+            <div class="col-6 d-flex align-items-end border-0 card " id="houseCard">
                0
             </div>
 
@@ -100,35 +100,13 @@
 
 
     <!-- -----------------ending   modal--------------------------------------->
-             <!-- add button for choice of ACE 1 or 11   -->   
-             <!-- <form class = "col-4 " id="middleDisplay">
-                <p style="padding-bottom: 0px; margin-bottom: 0px; ">
-                   You have drawn a ACE choose how to use:                    
-                </p>              
-                <p style="padding-bottom: 0px; margin-bottom: 0px; margin-left: 100px;">
-                   1 or 11 
-                </p>
-
-                <input type = "radio" name="gotAce" value= "1" id="one"
-                style="margin-top: 5px; margin-left: 20px;" /> 
-                  
-               <label for="one"> 1</label>
-                
-               <input type = "radio" name="gotAce" id="eleven" value= "11"
-                style="margin-top: 5px; margin-left: 20px;" /> 
-                  
-               <label for="one"> 11</label><br> 
-                
-               <button id="submit" type="button" >Choose One</button>
-                  <p > Click You Choice </p>  
-              
-             </form>  -->
+            
           <!-- End of Ace choice play-->
 
 
-             <div class = "col-4 text-right" id="draw2">
+             <div class = "col-4 text-right" id="houseDraw2">
                <img src="../images/card_deck/JPEG/blue_back.jpg" 
-                  style="width:150px;height:160px;"> 
+                  style="width:150px;height:160px;" id="houseShowCard"> 
              </div> 
 
          </div><!-- score area row end-->
@@ -138,9 +116,10 @@
                 <button  type="button" class ="btn btn-success align-item-left " id="player1Freeze"> 
                    Play One Freeze
                   </button>
+                  
              </div> 
              <div class = "col-4" id="deal">
-                <button  type="button" class ="btn btn-lg btn-dark btn-block" id="playBtn">Deal</button>
+                <button  type="button" class ="btn btn-dark btn-circle btn-xl " id="playBtn">Deal</button>
              </div> 
              <div class = "col-4 d-flex align-items-end justify-content-end " id="freeze2">
                 <button  type="button" class ="btn  btn-success ">House Freeze</button>
@@ -157,7 +136,7 @@
 
          <script  src="../js/jquery-3.4.1.min.js" ></script>
         <script  src="../js/bootstrap.min.js" ></script>           
-        <script  src="../js/app.js" ></script>
+        <!-- <script  src="../js/app.js" ></script> -->
         <script src="../js/custom.js" async></script>
     </body>
 </html>
