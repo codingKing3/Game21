@@ -2,56 +2,25 @@ $(document).ready(function () {
   let playerInfo = JSON.parse(sessionStorage.getItem("info"));
   console.log(playerInfo);
 
-  let showMyCard = document.getElementById("card1");
-  //let houseShowMyCard = document.getElementById("houseCard");
- // let showingTheCard = "#showCard"; 
-  const player = {
-      player1_Total: 0,
-      House_Total:0
-  };
-  let swithPlayer = false;
-  let total1 = 0;
+  let showMyCard = document.getElementById("card1");  
+  let houseShowMyCard = document.getElementById("houseCard");
+  let switchPlayer = false;  
   let hold = false;
-
-  
-  if (swithPlayer == true){
-     showMyCard = document.getElementById("houseCard");
-  }
- /*  else if (swithPlayer == false){
-    let showMyCard = document.getElementById("houseCard");
-    let total1 = 0;
-  }
- */
-
-  
+  let total1 = 0;
 
   // add player name
   // const personName = new playerInfo(sessionStorage.getItem("name"));
   //  const personEmail = new playerInfo(sessionStorage.getItem("email"));
-
   plyerName = playerInfo[0].name;
   $("#firstPlay").html(plyerName);
-  //plyerEmail = playerInfo[0].email;
  
-
-
   // will get random card number and add card value to total amount
   //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 
 
-  // ====Function area ===========
+  // ====Function area ===========  
 
-  // function will allow named player to freeze play on current total
-  $("#player1Freeze").on("click", function () {
-    console.log("You Pressed Freeze");
-   // let iHoldP1 = document.getElementById("draw1");
-    let noCardP1 = document.getElementById("cardPlayed1");
-    hold = true;
-
-    noCardP1.innerHTML = "Hold";
-  });
-
-  // function if random number is 10 return face card
+  // *** function if random number is 10 return face card
   function draw10(getNumber) {
     let faceCard = [10, "J", "Q", "K"];
     let cardType = ["C", "D", "H", "S"];
@@ -66,11 +35,9 @@ $(document).ready(function () {
     showMyCard.innerHTML = total1;  //
   } // end draw10
 
-  // function for numbers 1 - 9
+  // *** function for numbers 1 - 9
   // function if random is neither 1,11,10 the draw is default cards
   // if ((getNumber != 1) && (getNumber !=11) && (getNumber != 10))
-
-
   function drawJustNumber(getNumber,showingTheCard) {
     let switchPlayer = true;
     let cardType = ["C", "D", "H", "S"];
@@ -80,13 +47,10 @@ $(document).ready(function () {
       "../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg" 
     );
     total1 = total1 + getNumber;
-
     showMyCard.innerHTML = total1;  //
   } 
 
-
-//=======================================================================
-  // function will be called if draw is 1 or 11 which is a ACE
+  // *** function will be called if draw is 1 or 11 which is a ACE
   function drawOneEleven(getNumber) {    
     let cardType = ["C", "D", "H", "S"];
     let cardType_index = cardType[Math.floor(Math.random() * cardType.length)];
@@ -125,10 +89,8 @@ $(document).ready(function () {
     console.log("you total so far is: ", total1);
     // console.log('getNumber was assigned: ',getNumber);
   } // end function for 1 or 11 draw
-//======================================================================
 
-//==========================================================================
-  // function to check if player BUSTED over 21 or hit 21
+  // *** function to check if player BUSTED over 21 or hit 21
   function checkPlayerStats(){
     // check for BUST over 21
     if (total1 > 21) {
@@ -136,7 +98,7 @@ $(document).ready(function () {
       total1 = 0;
       showMyCard.innerHTML= `${player.player1_Total} BUSTED`;
       console.log("YOU BUSTED");
-      //swithPlayer = true;
+      switchPlayer = true;
 
       
       // uBust();
@@ -148,24 +110,21 @@ $(document).ready(function () {
       showMyCard.innerHTML= `${player.player1_Total} WIN!!`;
     } // end if
 
-  
+   return switchPlayer;
   } // end function
 
-  
+  //================= Gaming play processing calls ======================================================
 
-
-  //=======================================================================
-
-  // deal button will return player card when clicked
-  $("#playBtn").on("click", function () {
+  // *** deal button will return player card when clicked
+  $("#playBtn").on("click",  () => {
     // get random number between 1 to 11  and
     // $("input[name='gotAce']").attr('checked',false);
   //  let showMyCard = document.getElementById("card1");
+/* 
+    if (switchPlayer == true){
+      showMyCard = document.getElementById("houseCard"); */
 
-    /* if (swithPlayer == true){
-      let showMyCard = document.getElementById("houseCard"); */
-
-    let showingTheCard = " #houseShowCard";  //"#showCard";
+    let showingTheCard = " #showCard";  //"#showCard";#houseShowCard
     let displayCardTotal = "#houseCard";
     let getNumber = Math.floor(Math.random() * 11 + 1);
     
@@ -173,7 +132,7 @@ $(document).ready(function () {
 
     if (getNumber === 10) {
       draw10(getNumber);
-      checkPlayerStats();
+      switchPlayer = checkPlayerStats();
     } // end if draw is 10
 
     if (getNumber != 1 && getNumber != 11 && getNumber != 10) {
@@ -191,6 +150,16 @@ $(document).ready(function () {
     // $("#showCard").attr("src","../images/card_deck/JPEG/" + getNumber + cardType_index + ".jpg");
     //console.log("you total so far is: ", total1);
   }); // End playBtn onclick
+
+   // Button will allow named player to freeze play on current total
+   $("#player1Freeze").on("click", function () {
+    console.log("You Pressed Freeze");
+   // let iHoldP1 = document.getElementById("draw1");
+    let noCardP1 = document.getElementById("cardPlayed1");
+    hold = true;
+
+    noCardP1.innerHTML = "Hold";
+  });
   
 }); // End onload
 
